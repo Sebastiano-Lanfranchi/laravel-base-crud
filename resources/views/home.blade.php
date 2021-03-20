@@ -5,12 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
 
-        <title>Laravel</title>
+        <title>BeersTable</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+
+        <a href="/beers/create"><div>Create New Beer</div></a>
 
         <table class="table">
             <thead class="thead-dark">
@@ -28,12 +30,12 @@
             <tbody>
                 @foreach ($beers as $beer)
               <tr>
-                <th scope="row">{{$beer->id}}</th>
+                <th scope="row"><a href="{{ route('beers.show', ['beer'  => $beer->id])}}">{{$beer->id}}</a></th>
                 <td>{{$beer->brand}}</td>
                 <td>{{$beer->type}}</td>
                 <td>{{$beer->alcoholLevel}}</td>
                 <td>{{$beer->ibu}}</td>
-                <td>{{$beer->color}}</td>
+                <td style="background-color:{{$beer->color}};"></td>
                 <td>{{$beer->description}}</td>
                 <td><img class="img-resize" src="{{$beer->beerImg}}" alt=""></td>
               </tr>

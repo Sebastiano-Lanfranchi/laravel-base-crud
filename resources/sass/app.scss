@@ -11,3 +11,27 @@
     width: 200px;
     height: 250px;
 }
+
+.beerFocus{
+    width: 1600px;
+    margin: 0 auto;
+    text-align: center;
+
+    .typeFont{
+        font-weight: bold;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .img-resizeFocus{
+        width: 450px;
+        height: 600px;
+    }
+    .colorBox{
+        width: 100px;
+        height: 25px;
+        margin: 0 auto;
+    }
+    p{
+        font-size: larger;
+    }
+}

@@ -25,7 +25,7 @@ class BeerCrud extends Controller
      */
     public function create()
     {
-        //
+        return view('beers.create');
     }
 
     /**
@@ -36,7 +36,22 @@ class BeerCrud extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $beer = new Beer();
+
+        $beer->brand = $data['brand'];
+        $beer->beerImg = $data['beerImg'];
+        $beer->type = $data['type'];
+        $beer->alcoholLevel = $data['alcoholLevel'];
+        $beer->ibu = $data['ibu'];
+        $beer->color = $data['color'];
+        $beer->description = $data['description'];
+        $beer->save();
+
+        $beerStored = Beer::orderBY('id','desc')->first();
+
+        return redirect()->route('beers.show', $beerStored);
     }
 
     /**
