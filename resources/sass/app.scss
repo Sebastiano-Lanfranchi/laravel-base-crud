@@ -7,6 +7,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Fontawesome
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 .img-resize{
     width: 200px;
     height: 250px;
@@ -34,4 +37,10 @@
     p{
         font-size: larger;
     }
+}
+
+.formStore{
+    width: 1600px;
+    padding-top: 50px;
+    margin: 0 auto;
 }

@@ -5,18 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
 
-        <title>CreateBeer</title>
+        <title>EditBeer</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <form class="formStore" action="{{route('beers.update')}}" method="post">
+        <form class="formStore" action="{{  route('beers.update', compact('beer')) }}" method="post">
+
             @csrf
 
-            <input name="_method" type="hidden" value="POST">
-
-            @method('POST')
+            @method('PUT')
 
             <div class="form-group">
                 <label for="brand">Brand</label>
