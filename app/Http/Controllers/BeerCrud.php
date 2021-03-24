@@ -103,4 +103,17 @@ class BeerCrud extends Controller
     {
         //
     }
+
+    protected function validationForm(Request $request)
+    {
+       $request->validate([
+           'brand' => 'required|max:255',
+           'type' => 'required|max:255',
+           'alcoholLevel'=>'required|beetwen:0,100|ends_with:%',
+           'ibu'=>'required|between:0,120|ends_with:IBU',
+           'color'=>'required|starts_with:#|max:7',
+           'description'=>'required|max:1500',
+           'beerImg'=>'required|url',
+       ]);
+    }
 }
