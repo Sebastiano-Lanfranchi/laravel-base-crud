@@ -36,6 +36,8 @@ class BeerCrud extends Controller
      */
     public function store(Request $request)
     {
+        $this->validationForm($request);
+
         $data = $request->all();
 
         $beer = new Beer();
@@ -86,6 +88,8 @@ class BeerCrud extends Controller
      */
     public function update(Request $request, Beer $beer)
     {
+        $this->validationForm($request);
+
         $data = $request->all();
 
         $beer->update($data);
